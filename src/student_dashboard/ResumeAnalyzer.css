@@ -1,0 +1,135 @@
+/* --- Resume Analyzer Page Styles --- */
+.resume-analyzer-page {
+    padding: 20px 0;
+}
+
+.analyzer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.analyzer-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color, #007bff);
+}
+
+.btn-back {
+    background-color: #6c757d; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* --- Content Grid Layout --- */
+.analyzer-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Upload on left, results on right */
+    gap: 30px;
+}
+
+.upload-card,
+.results-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.upload-card h2,
+.results-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.upload-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Custom File Input Styling */
+.file-input-hidden {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-upload-label {
+    border: 2px dashed #007bff;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: #f0f8ff;
+    transition: background-color 0.2s;
+}
+.file-upload-label:hover {
+    background-color: #e0f0ff;
+}
+
+.btn-submit-analyze {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-submit-analyze:disabled {
+    background-color: #90ee90;
+    cursor: not-allowed;
+}
+.btn-submit-analyze:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+/* --- Results Area --- */
+.loading-message {
+    color: #ffc107;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.analysis-text-area {
+    width: 100%;
+    height: 400px; /* Fixed size for readable output */
+    min-height: 250px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    resize: vertical;
+    background-color: #f7f7f7;
+    white-space: pre; /* Ensures line breaks and spacing from mock data are preserved */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .analyzer-content-grid {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+    }
+}

@@ -1,0 +1,169 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    transform: scale(0.9);
+    animation: scaleUp 0.3s forwards;
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1);
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.login-form .input-group {
+    margin-bottom: 1.2rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/*Login Form Footer (For password/forgot link) */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button (Shared style) */
+.submit-login-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-login-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Ensure the submit button in signup is full width */
+.login-form .submit-login-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/*Modal Switching Link Style*/
+.modal-switch-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.switch-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 0.95rem;
+}
+
+.switch-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 450px) {
+    .modal-content {
+        max-width: 90%;
+        padding: 1.5rem;
+        margin: 0 10px; 
+    }
+
+    .form-footer {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    
+    .form-footer .submit-login-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,159 @@
+/*
+ * Styles for the Student Profile Component
+*/
+
+/* --- General Profile Container --- */
+.student-profile {
+    padding: 20px 0;
+}
+
+/* --- Profile Header and Actions --- */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    /* Uses the primary color defined in your App.css or main styles */
+    color: var(--primary-color, #007bff); 
+}
+
+.profile-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-back {
+    background-color: #6c757d; /* Gray */
+    color: white;
+}
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+.btn-edit {
+    background-color: #ffc107; /* Warning yellow */
+    color: #333;
+    border: none;
+}
+
+.btn-edit:disabled {
+    background-color: #f8d77f;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* --- Profile Form Layout --- */
+.profile-form-grid {
+    display: grid;
+    /* Creates two columns for a clean, spaced layout */
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form-grid h2 {
+    grid-column: 1 / -1; /* Spans across all columns */
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group.grid-span-2 {
+    grid-column: 1 / -1; /* Fields like Address span full width */
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Input Fields Styling */
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+/* Styling for editable fields when focused */
+.input-group input:focus:not(:disabled) {
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Styling for non-editable fields */
+.input-group input:disabled {
+    background-color: #f5f5f5;
+    color: #888;
+}
+
+/* Save Button */
+.btn-save-changes {
+    background-color: #28a745; /* Success green */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    width: 100%;
+    grid-column: 1 / -1; /* Spans full width */
+}
+.btn-save-changes:hover {
+    background-color: #1e7e34;
+}
+
+
+/* --- Responsive Adjustment --- */
+@media (max-width: 768px) {
+    .profile-form-grid {
+        grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+        padding: 20px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-actions {
+        margin-top: 15px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .profile-actions button {
+        flex: 1; /* Make buttons take equal space */
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .profile-actions button:last-child {
+        margin-right: 0;
+    }
+}

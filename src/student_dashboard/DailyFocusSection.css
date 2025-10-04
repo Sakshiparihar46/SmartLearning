@@ -1,0 +1,113 @@
+
+.daily-focus-section {
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.daily-tasks-card,
+.analytics-summary-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.daily-tasks-card h2,
+.analytics-summary-card h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color, #007bff);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 1rem;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-checkbox {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.view-all-tasks-btn {
+    background: none;
+    border: none;
+    color: #17a2b8; 
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+.view-all-tasks-btn:hover {
+    color: var(--primary-color, #007bff);
+}
+
+/* Analytics Summary Styling  */
+.avg-score {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.mini-bar-chart-container {
+    height: 120px; 
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.bar-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.performance-bar {
+    width: 80%;
+    background-color: #28a745;
+    border-radius: 3px 3px 0 0;
+    transition: height 0.5s ease;
+    box-shadow: 0 -2px 5px rgba(40, 167, 69, 0.3);
+}
+
+.analytics-insight {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive adjustments for Daily Focus */
+@media (max-width: 900px) {
+    .daily-focus-section {
+        /* Stack tasks and analytics vertically on smaller screens */
+        grid-template-columns: 1fr;
+    }
+}
