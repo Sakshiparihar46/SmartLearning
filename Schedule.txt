@@ -1,0 +1,11 @@
+SCHEDULE CREATION
+
+
+Flow Step	                        User Action / System Action	                                                    Core Technology & Components	                                                                           
+1. DATA INPUT & DEFINITION	        Student defines a study block (Subject, Task, Duration).	                    Frontend/UI: HTML/CSS/JS (e.g., React, Vue); Data Format: JSON object to structure the task details.
+2. TIME & RECURRENCE	            Student selects the specific days and time slot for the study.	                Data Format: JSON with recurrence rules (e.g., days: [Mon, Wed, Fri], start: 19:00, duration: 120mins); Time Logic: CRON expressions or custom scheduling logic in the backend.
+3. AUTHENTICATION & ACCESS	        Securely connects the application to the student's calendar.	                Calendar Provider API (e.g., Google Calendar API, Microsoft Graph); Security: OAuth 2.0 protocol for generating a secure Access Token.
+4. CONFLICT CHECK	                Checks if the requested time slot is already booked on the student's calendar.	API Endpoint: Calendar API's Free/Busy endpoint (GET request); Backend Logic: Python/Node.js script to compare the requested time with busy times.
+5. EVENT CREATION	                Creates the confirmed, time-blocked event on the calendar.	                    API Endpoint: Calendar API's Events endpoint (POST request); Programming Language: Python/Node.js to construct and send the final JSON payload.
+6. NOTIFICATION SETUP	            Configures reminders for the created event.	                                    API Feature: reminders field within the Calendar Event JSON payload (e.g., method: popup, minutes: 15).
+7. SCHEDULE MANAGEMENT	            The student needs to reschedule or cancel a session.	                        API Endpoints: PUT (for updating an event's time) or DELETE (for cancellation) using the unique Event ID.

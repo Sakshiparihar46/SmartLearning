@@ -1,0 +1,25 @@
+Flow of Manual Resume Analysis how we achieve Manual Resume Analysis
+-------------------------------------------------------------------------
+
+Flow Step       	Phase       	             Core Action
+
+
+1. INPUT    	    Data Ingestion	            Uploads resume and Job Description text.(Frontend Frameworks-React, File Handling Libraries (PyPDF2, python-docx))
+
+
+2. PARSING	        Extraction & Structuring	Convert unstructured text into a machine-readable(OCR-for image PDFs, NLP/AI Libraries (spaCy, NLTK), Resume Parsing API)
+
+
+3. JD ANALYSIS	    Requirement Definition	    Extract all mandatory and preferred criteria from job description (NLP/LLMs, JSON (for outputting defined criteria))
+
+
+4. MATCHING	        Data Comparison	            Compare structured resume data against structured JD criteria (Python/Backend Logic-Custom functions for Boolean and numeric checks, Skill Taxonomies, Simple SQL)
+
+
+5. SCORING	        Weighted Calculation	    Compute final compatibility score by weighting skill, experience, and salary alignment(scikit-learn-for statistical matching/similarity calculation like TF-IDF, Python Logic-Applying weighted coefficients and summing scores)
+
+
+6. SALARY CHECK	    Financial Filter	        Compare the candidate's salary requirement against the company's budget range (Simple Conditional Logic JSON)
+
+
+7. OUTPUT	        Final Assessment	        Present the score and final verdict (Strong/Normal/Weak) to the recruiter/user.	Frontend/UI (Displaying the percentage score and categorical label); API/Database (Recording the score for ranking).
